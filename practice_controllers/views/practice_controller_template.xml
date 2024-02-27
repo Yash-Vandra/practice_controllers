@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="menu_test" model="website.menu">
+        <field name="name">HOMIE BABA</field>
+        <field name="url">/contactus</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">20</field>
+    </record>
+
+
+    <template id="website_input_customer_sale_order" name="Input">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <br/>
+                    <center>
+                        <h3>INPUT</h3>
+                    </center>
+                </div>
+
+                <form role="form" action="/output_test" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="mobile" name="partner_id" t-att-value="partner_id" class="form-control" id="exampleInputEmail1"
+                               aria-describedby="emailHelp"/>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="mobile" name="password" t-att-value="password" class="form-control"
+                               id="exampleInputPassword1"/>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="website_output_sale_order" name="Input">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <br/>
+                    <center>
+                        <h3>Output</h3>
+                    </center>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
